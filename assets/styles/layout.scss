@@ -1,0 +1,85 @@
+//@use "@picocss/pico/scss/pico.fluid.classless.scss";
+
+[x-cloak] { display: none !important; }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+:not(p) > a:not([role="link"]) {
+    padding: 1rem;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+main > section:nth-child(1) {
+    padding-top: 6rem;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 2rem;
+    
+    > div {
+        padding: 1rem;
+    }
+}
+
+section:has(> article) {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    
+    > * {
+        flex-shrink: 0;
+    }
+}
+
+
+article {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+div, span {
+    display: flex;
+    gap: 1rem;
+}
+
+div {
+    flex-direction: column;
+}
+
+span {
+    align-items: center;
+}
+
+@media (min-width: 767px) {
+    main {
+        > section:has(>:not(section)) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+            max-width: 70rem;
+            margin: auto;
+        }
+        
+        > section:has(> section){
+            display: flex;
+
+            > section {
+                padding: 1rem;
+            }
+        }
+    }
+}
