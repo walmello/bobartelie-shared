@@ -13,6 +13,10 @@ html, body {
 
 body {
     font-family: sans-serif;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 :not(p) > a:not([role="link"]) {
