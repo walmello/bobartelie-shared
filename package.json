@@ -1,5 +1,8 @@
 {
   "name": "@bobartelie/shared",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "alpinejs": "^3.15.4"
+  }
 }
